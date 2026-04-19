@@ -1,0 +1,17 @@
+.menuContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000;
+}
+
+.logo{
+  width: 15%;
+  height: 15%;
+}
+
+.textoMenu{
+  color: #fff;
+  font-weight: bold;
+}
