@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './Menu.css'
 import Logo from '../assets/LogoSmartBianco.png'
 
-function Menu() {
+function Menu({ paginaAtual }) {
   const [count, setCount] = useState(0)
 
   return (
@@ -16,12 +16,12 @@ function Menu() {
         >
         </img>
 
-        <div className=''>
-          <a className="textoMenu" href=''><p>Home</p></a>
-          <a className="textoMenu" href=''><p>Aulas</p></a>
-          <a className="textoMenu" href=''><p>Equipe</p></a>
-          <a className="textoMenu" href=''><p>Planos</p></a>
-          <a className="textoMenu" href=''><p>Matricule-se</p></a>
+        <div className='paginasMenu'>
+          <a className={`textoMenu ${paginaAtual === 'home' ? 'ativo' : ''}`} href=''>Home</a>
+          <a className={`textoMenu ${paginaAtual === 'aulas' ? 'ativo' : ''}`} href=''>Aulas</a>
+          <a className={`textoMenu ${paginaAtual === 'equipe' ? 'ativo' : ''}`} href=''>Equipe</a>
+          <a className={`textoMenu ${paginaAtual === 'planos' ? 'ativo' : ''}`} href=''>Planos</a>
+          <button className='matricula'>Matricule-se</button>
         </div>
       </section>
     </>
