@@ -1,0 +1,95 @@
+:root {
+  --laranja: #ff7f50;
+  --branco: #fff;
+  --cinzaClaro: #FAF9F6
+}
+
+.matriculaContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 150px;
+  min-height: 110vh;
+  background-color: var(--branco);
+  width: 100%;
+}
+
+.formInput {
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formMatricula {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--cinzaClaro);
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.planosContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.planoCard {
+  background-color: black;
+  color: var(--branco);
+  border-color: var(--branco);
+  border-radius: 8px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.planoCard.selecionado {
+  border-width: 3px;
+  border-color: var(--laranja);
+  background-color: black;
+  color: var(--laranja);
+}
+
+.planoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.buttonCan {
+  background-color: black;
+  color: var(--branco);
+  border: none;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.buttonCan:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.buttonCad {
+  background-color: var(--laranja);
+  color: var(--branco);
+  border: none;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.buttonCad:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

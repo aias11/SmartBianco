@@ -126,7 +126,7 @@ function Home() {
                 <h1>Plano Básico</h1>
               </div>
               <div className='corpoCard'>
-                <h2>R$ 119,90/mês</h2>
+                <h2>R$ 99,90/mês</h2>
                 <ul>
                   <li>Musculação</li>
                   <li>Aulas de Zumba, Pilates</li>
@@ -141,7 +141,7 @@ function Home() {
                 <h1>Plano Smart</h1>
               </div>
               <div className='corpoCard'>
-                <h2>R$ 149,90/mês</h2>
+                <h2>R$ 269,90/mês</h2>
                 <ul>
                   <li>Musculação</li>
                   <li>Aulas de Zumba, Pilates, Natação</li>
@@ -156,7 +156,7 @@ function Home() {
                 <h1>Plano Premium</h1>
               </div>
               <div className='corpoCard'>
-                <h2>R$ 179,90/mês</h2>
+                <h2>R$ 999,90/mês</h2>
                 <p className='destaque'>Acesso a todas as aulas + Convide um amigo!</p>
                 <ul>
                   <li>Musculação</li>
