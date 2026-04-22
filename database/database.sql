@@ -1,6 +1,11 @@
 create database if not exists BDSmartBianco;
 use bdsmartbianco;
 
+CREATE TABLE IF NOT EXISTS tbCargos(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    cargo VARCHAR(100) NOT NULL
+);
+
 create table if not exists tbFuncionarios (
 id int primary key,
 nome varchar (30) not null,
@@ -13,13 +18,16 @@ id_cargo INT NOT NULL,
 Foreign Key (id_cargo) REFERENCES tbCargos(id)
 );
 
-
-CREATE TABLE IF NOT EXISTS tbCargos(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    cargo VARCHAR(100) NOT NULL
+create table if not exists tbTreino (
+id int primary key auto_increment,
+descricao text not null
 );
 
-
+create table if not exists tbAssinatura (
+id int primary key auto_increment,
+plano varchar (10) not null,
+valor decimal (8,2) not null
+);
 
 create table if not exists tbClientes (
 id int primary key auto_increment,
@@ -37,22 +45,6 @@ id_treino int not null,
 foreign key (id_treino)
 references tbTreino (id)
 );
-
-
-create table if not exists tbTreino (
-id int primary key auto_increment,
-descricao text not null
-);
-
-create table if not exists tbAssinatura (
-id int primary key auto_increment,
-plano varchar (10) not null,
-valor decimal (8,2) not null
-);
-
-
-
-
 /* inserts */
 
 
