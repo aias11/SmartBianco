@@ -38,7 +38,11 @@ function Home() {
               <h3>SMARTBIANCO: ENERGIA, MOVIMENTO & RESULTADO</h3>
             </div>
             <div className='botoes'>
-              <button className='estilobotoes'>Matricule-se</button>
+              <button 
+              onClick={() => {
+                navigate('/matricula')
+              }}
+              className='estilobotoes'>Matricule-se</button>
               <button className='estilobotoesAulas'>Veja as aulas</button>
             </div>
           </div>
