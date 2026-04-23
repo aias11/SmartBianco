@@ -1,22 +1,22 @@
 package com.smartbianco.smartbiancoweb.controllers;
 
-import com.smartbianco.smartbiancoweb.models.Cargo;
-import com.smartbianco.smartbiancoweb.repositories.CargoRepository;
+import com.smartbianco.smartbiancoweb.models.Assinatura;
+import com.smartbianco.smartbiancoweb.repositories.AssinaturaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/cargos")
+@RequestMapping("/api/assinaturas")
 @CrossOrigin(origins = "*")
 
-public class CargoController {
+public class AssinaturaController {
   @Autowired
-  private CargoRepository repository;
+  private AssinaturaRepository repository;
 
   @GetMapping
-  public List<Cargo> listarCargos() {
+  public List<Assinatura> listarAssinaturas() {
     return repository.findAll();
   }
 }

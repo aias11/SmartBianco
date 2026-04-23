@@ -7,13 +7,14 @@ import lombok.Data;
 
 /*Indica para o Java que ela representa uma linha da tabela do banco de dados */
 @Entity
-/* Identifica qual tabela do banco de dados ela representa */
-@Table(name = "tbCargos")
-/* Ativa o Lombok */
+/*Identifica qual tabela do banco de dados ela representa */
+@Table(name = "tbTreino")
+/*Ativa o Lombok */
 @Data
 
-public class Cargo {
-  /* Define que o atributo id representa a chave primária da tabela */
+
+public class Treino {
+    /* Define que o atributo id representa a chave primária da tabela */
   @Id
   /* Corresponde ao AUTO_INCREMENT do SQL */
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,8 +23,7 @@ public class Cargo {
 
   /* Column define regras específicas para a coluna */
   /* nullable é o o NOT NULL do sql */
-  @Column(nullable = false, length = 100)
+  @Column(nullable = false, columnDefinition =  "TEXT")
   /* Tipo de dado que vamos usar */
-  private String cargo;
-
+  private String descricao;
 }
