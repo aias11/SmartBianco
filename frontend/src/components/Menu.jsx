@@ -22,7 +22,7 @@ function Menu({ paginaAtual }) {
           <Link className={`textoMenu ${paginaAtual === 'home' ? 'ativo' : ''}`} to='/'>
             Home
           </Link>
-          <Link className={`textoMenu ${paginaAtual === 'aulas' ? 'ativo' : ''}`} to='/aulas'>
+          <Link className={`textoMenu ${paginaAtual === 'aulas' ? 'ativo' : ''}`} to='/areacliente'>
             Aulas
           </Link>
           <Link className={`textoMenu ${paginaAtual === 'equipe' ? 'ativo' : ''}`} to='/equipe'>

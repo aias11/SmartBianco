@@ -19,4 +19,10 @@ public class ClienteController {
   public List<Cliente> ListarClientes() {
     return repository.findAll();
   }
+
+  @GetMapping("/{id}")
+  public Cliente buscarPorId(@PathVariable Long id) {
+    return repository.findById(id).orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
+  }
+
 }

@@ -1,0 +1,657 @@
+:root {
+    /* ===== CORES PRINCIPAIS ===== */
+    --color-primary: #fc9209fb;
+    --color-primary-hover: #f7ab08;
+
+    /* ===== BACKGROUNDS ===== */
+    --bg-main: #0B0F14;
+    --bg-card: #202020ef;
+    --bg-hover: #1A2230;
+
+    /* ===== TEXTOS ===== */
+    --text-main: #FFFFFF;
+    --text-secondary: #B0B7C3;
+    --text-muted: #6B7280;
+
+    /* ===== BORDAS ===== */
+    --border-color: #68686821;
+
+    /* ===== STATUS ===== */
+    --success: #22C55E;
+    --warning: #F97316;
+    --info: #3B82F6;
+
+    /* ===== OUTROS ===== */
+    --radius: 12px;
+    --transition: 0.3s ease;
+}
+
+*{
+    font-family: "Inter", sans-serif;
+}
+
+
+.area-cliente-container {
+    color: white;
+    background-color: #232424;
+    overflow-x: hidden;
+}
+
+
+
+
+.nav-cliente {
+    position: fixed;
+    top: 0;
+    /* Sempre bom definir a posição no topo */
+    left: 0;
+
+    /* O segredo está aqui: */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Suporte para Safari */
+
+    background-color: rgba(0, 0, 0, 0.473);
+    /* Um pouco mais escuro ajuda no contraste */
+
+    width: 100%;
+    height: 80px;
+    /* 100px costuma ser muito alto para nav, mas fica a seu critério */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    /* Garante que a nav fique acima de tudo */
+    border-bottom: 1px solid rgba(128, 128, 128, 0.356);
+}
+
+.nav-cliente span {
+    margin-left: 25px;
+}
+
+.NavAccontBox {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.NavAccontBox img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+
+}
+
+
+.main-cliente {
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+}
+
+.main-cliente h2 {
+    margin-left: 25px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 35px;
+    letter-spacing: 3px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.438);
+}
+
+.main-clienteSpan {
+    letter-spacing: 0px;
+    font-family: "Roboto", sans-serif;
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+.MainSpan{
+
+    letter-spacing: 0px;
+    font-family: "Roboto", sans-serif;
+    color: var(--text-secondary);
+    font-size: 15px;
+
+
+}
+
+.DateTreino {
+    display: flex;
+    flex-direction: column;
+}
+
+.Semana {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 35px;
+}
+
+
+
+
+
+
+.Semana button {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    border-radius: var(--radius);
+    border: none;
+    max-height: 45px;
+    background-color: var(--color-primary);
+    color: black;
+    transition: var(--transition);
+    margin-right: 70px;
+}
+
+.Semana button:hover {
+    background: none;
+    color: orange;
+    border: 2px solid orange;
+}
+
+
+
+
+
+
+.TreinosDaSemanaMainBox {
+    padding: 30px;
+    /* Aumentei o respiro */
+    display: flex;
+    justify-content: space-between;
+    /* Empurra o card verde para o final */
+    align-items: stretch;
+    /* Faz todos terem a mesma altura */
+    gap: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/*  Tamanhos Para Mudar   */
+.TreinoDaSemanaBox {
+    background-color: var(--bg-card);
+    padding: 20px; 
+    border: 1px solid var(--border-color);
+    border-left: 1px solid rgba(128, 128, 128, 0.192);
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    gap: 15px; /* REDUZIDO: de 40px para 15px para caber os 7 dias */
+    flex: 1; /* Adicionado: faz a caixa preencher o espaço restante */
+    justify-content: space-between; /* Distribui os dias por igual */
+    border-radius: var(--radius);
+}
+
+.DiaDaSemanaBox {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 15px 20px; /* REDUZIDO: de 45px para 20px. Adicionado 15px em cima/baixo */
+    background: rgba(58, 58, 58, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    min-width: 80px; /* Garante que não fiquem esmagados */
+}
+
+.DiaDaSemanaBox:hover{
+transform: scale(1.05);
+border: 1px solid var(--color-primary-hover);
+
+}
+
+.DiaDaSemanaBox h5 {
+    color: #f7ab08;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.DiaDaSemanaBox span {
+    margin-top: 7px;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Esconde o checkbox padrão */
+.custom-checkbox input {
+    display: none;
+}
+
+/* O círculo base (vazio) */
+.checkmark {
+    width: 24px;
+    height: 24px;
+    background-color: #333;
+    /* Cor dele desmarcado */
+    border-radius: 50%;
+    /* Deixa redondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0);
+    /* Esconde o ícone quando não checado */
+    font-size: 18px !important;
+    transition: all 0.2s ease;
+    user-select: none;
+    margin-bottom: 20px;
+}
+
+/* Quando o input estiver checado: */
+.custom-checkbox input:checked+.checkmark {
+    background-color: var(--color-primary);
+    /* Verde Limão igual da imagem */
+    color: black;
+    /* Cor do ícone check */
+}
+
+/* "Se a DiaDaSemanaBox tiver um input:checked dentro dela..." */
+.DiaDaSemanaBox:has(input:checked) {
+    border: 1px solid var(--color-primary);
+    transition: background-color 0.3s ease;
+    border-radius: var(--radius);
+    transform: scale(1.05);
+}
+
+.ProxTreinoMainBox {
+    background-color: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 15px 20px;
+    margin-right: 50px;
+    margin-left: 20px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.SubTitle{
+padding: 15px;
+font-weight: bolder;
+border-radius: 5px;
+border-bottom: 1px solid rgba(255, 166, 0, 0.349);
+font-size: 16px;
+
+}
+
+.ProxTreinoMainBox h6 {
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.ProxTrenoBox {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ProxTrenoBox h6 {
+    text-align: center;
+    font-size: 10px;
+    color: var(--text-secondary);
+}
+
+.ProxTrenoBox span {
+    color: var(--text-main);
+    margin-top: 5px;
+}
+
+.ProxTreinoMainBox button {
+    background: none;
+    padding: 10px;
+    border: 1px solid var(--color-primary);
+    border-radius: 7px;
+    color: white;
+    transition: var(--transition);
+    margin-top: 10px;
+    font-weight: bolder;
+}
+
+.ProxTreinoMainBox button:hover {
+    transform: scale(1.05);
+    background-color: var(--color-primary);
+    color: black;
+
+}
+
+.BoxIcons {
+    background-color: #477fdfa1;
+    padding: 8px;
+    border-radius: 10px;
+    margin-right: 4px;
+}
+
+
+
+
+
+
+
+.TreinoMainBOX {
+    gap: 30px; /* Reduzido de 50px */
+    display: flex;
+    margin-top: 20px;
+    padding: 0 30px; /* Dá uma margem da tela */
+}
+
+.TreinosMainBox {
+    background-color: var(--bg-card);
+    border-radius: var(--radius);
+    width: 70%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.TreinoTitulo {
+
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    border-bottom: 2px solid orange;
+    border-radius: 10px;
+
+}
+
+.TreinoTitulo button {
+    padding: 15px 20px;
+    margin-right: 20px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    color: var(--color-primary);
+    font-size: 12px;
+    font-weight: bolder;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.BtnMarkTreino:hover {
+    background-color: var(--color-primary);
+    color: black;
+
+
+
+}
+
+.TreinoName {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Text1212 {
+    font-size: 15px;
+    text-align: center;
+    font-weight: bolder;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.Treinos {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Treino {
+     background:rgba(58, 58, 58, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    transition: var(--transition);
+}
+
+.Treino img {
+
+    filter: grayscale(100%);
+}
+
+.Treino:hover {
+    transform: scale(1.01);
+}
+
+.TreinoBox1 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.TreinoBox1 h6 {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Fica melhor alinhado com a imagem */
+    font-size: 15px;
+    margin-left: 15px; /* REDUZIDO: de 50px para colar mais na imagem */
+    gap: 10px;
+}
+
+.TreinoBox1 span {
+
+    color: var(--text-muted);
+
+}
+
+.Series {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* REDUZIDO: de 150px para 40px. Muito mais harmônico */
+    margin-right: 20px; /* REDUZIDO: de 70px */
+    justify-content: flex-end; /* Alinha relógio e séries bonitinhos na direita */
+    flex: 1; /* Faz esse bloco ocupar o espaço que sobrar da esquerda */
+}
+
+.ResumosMainBox {
+    width: 30%; /* ADICIONADO: Faz a dupla perfeita com o 70% da esquerda */
+    min-width: 280px; /* Garante que o resumo não fique esmagado em monitores menores */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinha os itens para o topo */
+    color: white;
+    text-align: center;
+}
+.ResumoDaSemanaBox {
+    background-color: var(--bg-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Alinha os 3 itens no centro */
+    width: 100%;
+    padding: 10px;
+    border-radius: var(--radius);
+}
+
+.BoxTaks {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.BoxTaks p{
+margin-top: 3px;
+display: flex;
+flex-direction: column;
+gap: 5px;
+color: var(--text-muted);
+}
+
+.BoxTaks strong{
+color: var(--text-main);
+font-weight: bolder;
+font-size: 17px;
+
+
+}
+
+.ResumoItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza ícone e texto */
+}
+
+.ResumoItem span {
+    font-size: 30px;
+    /* Tamanho do ícone */
+    margin-bottom: 5px;
+}
+
+.ResumoItem p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Estilo da Dica */
+.DicasDoTreinador {
+    margin-top: 50px;
+    padding: 15px;
+    background-color: var(--bg-card);
+    border-radius: var(--radius);
+    max-width: 400px;
+}
+
+.DicasDoTreinador h6{
+margin-top: 10px;
+}
+
+.DicaConteudo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: lighter;
+    background: rgba(58, 58, 58, 0.1);
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    color: white;
+}
+
+.FotoTreinador {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #ccc;
+    /* Fundo enquanto não tem foto */
+}
+
+#alinhamento {
+    margin-bottom: 10px;
+}
+
+.TreinoPerna {
+    width: 150px;
+    height: 100px;
+    border-radius: 12px;
+}
+
+.MarcarTreino {
+    display: flex;
+    /* Importante para centralizar o check dentro */
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    /* Tamanho do círculo */
+    height: 28px;
+    background-color: #333;
+    /* Cor quando desmarcado */
+    border-radius: 50%;
+    /* Deixa redondo */
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.MarcarTreino input {
+    display: none;
+}
+
+
+.MarcarTreino input:checked {
+    background-color: var(--color-primary);
+
+}
+
+.MarcarTreino:has(input:checked) {
+    background-color: var(--color-primary);
+}
+
+.Treino:has(input:checked) {
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius);
+}
+
+.Treino:has(input:checked) img {
+    filter: grayscale(0%);
+}
+
+
+
+.IconsName {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+
+}
+
+.Ajuste {
+    height: 100px;
+    margin-left: 25px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+}
+
+#icontreino {
+    transition: var(--transition);
+
+}
+
+
+.IconsTreinoSerarete {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.Series:has(input:checked) #icontreino {
+    color: var(--color-primary);
+
+}
+
+
+.TextoDiferente{
+color: var(--text-muted);
+}
