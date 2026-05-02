@@ -9,9 +9,10 @@ import java.time.LocalDate;
 @Data
 
 public class Cliente {
-  
-  @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
   @Column(nullable = false, length = 30)
   private String nome;
@@ -30,6 +31,10 @@ public class Cliente {
 
   @Column(nullable = false, length = 10)
   private String sexo;
+
+  @ManyToOne
+  @JoinColumn(name = "id_as", nullable = false)
+  private Assinatura assinatura;
 
   @Column(nullable = false)
   private Boolean as_on = false;

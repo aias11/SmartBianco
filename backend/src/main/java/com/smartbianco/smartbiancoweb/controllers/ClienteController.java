@@ -3,13 +3,14 @@ package com.smartbianco.smartbiancoweb.controllers;
 import com.smartbianco.smartbiancoweb.models.Cliente;
 import com.smartbianco.smartbiancoweb.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/clientes")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:5173", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS})
 public class ClienteController {
 
   @Autowired
@@ -23,6 +24,12 @@ public class ClienteController {
   @GetMapping("/{id}")
   public Cliente buscarPorId(@PathVariable Long id) {
     return repository.findById(id).orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
+  }
+
+  @PostMapping
+  public ResponseEntity<Cliente> cadastrar(@RequestBody Cliente novoCliente){
+    Cliente clienteSalvo = repository.save(novoCliente);
+    return ResponseEntity.status(201).body(clienteSalvo);
   }
 
 }
